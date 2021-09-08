@@ -49,6 +49,8 @@ Usage: query
 
 4. Inspect the filenames obtained, modifying filepaths internal to GDC that do not apply. Edit as needed and save. (e.g., `query_results.fixed.tsv`)
 
+5. (Optional) Convert the query results to "bam map" format using the `query2bammap.sh` script for use in other workflows, such as [TinDaisy](https://github.com/ding-lab/TinDaisy).
+
 
 Usage: data download
 -------------
