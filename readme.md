@@ -17,6 +17,8 @@ There are a few preliminary steps.
 - Obtain an authentication token from GDC (or AWG) and save to file (e.g., mytoken.txt). Do this by logging into the GDC (or AWG) data portal, and then
    navigate to Download Token under your username.
 
+   Note that more recently, it appears tokens are needed only for AWG projects.
+
 - For data downloads, install the [gdc-client](https://gdc.cancer.gov/access-data/gdc-data-transfer-tool) data transfer tool.
 
 - Adjust paths and filenames as needed.

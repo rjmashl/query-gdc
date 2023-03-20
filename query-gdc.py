@@ -61,6 +61,7 @@ with open( 'aliquot.tsv', 'r' ) as tsvin:
 with open( TOKEN_FILE_PATH, 'r') as token:
     token_string = str(token.read().strip())
 
+# Note: tokens appear required for AWG endpoints but not GDC endpoints. X-Auth-Token needed not to be commented out in testing.
 headers = {
     'X-Auth-Token': token_string,
     'Content-Type': 'application/json',
