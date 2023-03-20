@@ -62,7 +62,8 @@ with open( TOKEN_FILE_PATH, 'r') as token:
     token_string = str(token.read().strip())
 
 headers = {
-    'X-Auth-Token': token_string
+    'X-Auth-Token': token_string,
+    'Content-Type': 'application/json',
 }
 
 fields = [
@@ -76,11 +77,15 @@ fields = [
     'file_id',
     'file_size',
     'data_format',
-    'cases.aliquot_ids',
     'cases.samples.portions.analytes.aliquots.aliquot_id',
     'file_name',
     'experimental_strategy',
-    'data_category'
+    'data_category',
+    'cases.samples.preservation_method',
+    'cases.samples.sample_type',
+    'data_format',
+    'md5sum',
+    'state',
 ]
 fields = ','.join(fields)
 
@@ -100,7 +105,7 @@ with open( fileID_list_file ) as f:
         #fileID = 'ba34d55f-c1f8-4789-bc1f-d7697bb7f157'
         print( '#file = ' + file_id )
 
-        response = requests.get( files_endpt + file_id , params = params, headers=headers)
+        response = requests.post( files_endpt + file_id , json = params, headers=headers)
         h = json.loads(response.content.decode('utf-8'))
 
         if 'data' not in h:
